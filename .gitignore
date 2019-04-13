@@ -121,3 +121,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#Ignore PyChamp auto generated directory
+.DS_Store
+.idea
