@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="{% static 'books/style.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'books:index' %}">The Books store</a>
+    </div>
+
+</nav>
 <ul>
     {% for book in all_books %}
-    <li><a href="{% url 'books:detail' book.id %}">{{book.name}}</a> </li>
+    <li><a href="{% url 'books:detail' book.id %}">{{book.name}}</a></li>
     {% endfor %}
 </ul>
 </body>
