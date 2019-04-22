@@ -104,6 +104,9 @@ ENV/
 env.bak/
 venv.bak/
 tcl/
+Include/
+*.exe
+*.dll
 
 # Spyder project settings
 .spyderproject
