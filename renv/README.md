@@ -21,4 +21,10 @@ Create Django app
 Check the app is set correctly from the project folder i.e. rest
 	python manage.py runserver
 	
+Do the coding on required file and then do migration
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py runserver
 
