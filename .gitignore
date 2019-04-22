@@ -125,3 +125,9 @@ dmypy.json
 #Ignore PyChamp auto generated directory
 .DS_Store
 .idea
+
+# C extensions
+*.so
+
+# Thumbnails
+._*
