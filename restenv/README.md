@@ -35,3 +35,8 @@ pip install pillow
 #Upgrade pip version
 python -m pip install --upgrade pip
 
+#Install Django filter
+pip install django-filter
+
+#Test end points
+http://127.0.0.1:8000/task/?completed=True

@@ -21,11 +21,11 @@ from restapp import views
 from django.conf.urls.static import static
 from django.conf import settings
 
-# router = routers.DefaultRouter()
-router = routers.SimpleRouter()
-router.register(r'task', TaskViewSet)
-router.register(r'completed_task', views.CompletedTaskViewSet)
-router.register(r'due_task', views.DueTaskViewSet)
+router = routers.DefaultRouter()
+#router = routers.SimpleRouter()
+router.register(r'task', views.TaskViewSet)
+#router.register(r'completed_task', views.CompletedTaskViewSet)
+#router.register(r'due_task', views.DueTaskViewSet)
 
 urlpatterns = [
                   url(r'^', include(router.urls)),
