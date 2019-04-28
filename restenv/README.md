@@ -28,3 +28,10 @@ python manage.py migrate
 
 python manage.py runserver
 
+#Adding Image field on RestAPI
+Go to root directory i.e restenv
+pip install pillow
+
+#Upgrade pip version
+python -m pip install --upgrade pip
+

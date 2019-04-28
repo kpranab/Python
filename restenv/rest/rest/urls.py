@@ -18,6 +18,8 @@ from django.conf.urls import include,url
 from rest_framework import routers
 from restapp.views import TaskViewSet
 from restapp import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 #router = routers.DefaultRouter()
 router = routers.SimpleRouter()
@@ -29,4 +31,4 @@ urlpatterns = [
     url(r'^', include(router.urls)),
     url('admin/', admin.site.urls),
 
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
