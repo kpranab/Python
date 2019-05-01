@@ -40,3 +40,6 @@ pip install django-filter
 
 #Test end points
 http://127.0.0.1:8000/task/?completed=True
+
+#Search functionality for rest-API
+http://127.0.0.1:8000/task/?search=before
