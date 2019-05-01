@@ -16,18 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import include, url
 from rest_framework import routers
-from restapp.views import TaskViewSet
+from restapp.views import TaskViewSet, CreateUserView
 from restapp import views
 from django.conf.urls.static import static
 from django.conf import settings
 
 router = routers.DefaultRouter()
-#router = routers.SimpleRouter()
+# router = routers.SimpleRouter()
 router.register(r'task', views.TaskViewSet)
-#router.register(r'completed_task', views.CompletedTaskViewSet)
-#router.register(r'due_task', views.DueTaskViewSet)
+# router.register(r'completed_task', views.CompletedTaskViewSet)
+# router.register(r'due_task', views.DueTaskViewSet)
 
 urlpatterns = [
+                  url(r'^register/$', views.CreateUserView.as_view(), name='user'),
+                  url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
                   url(r'^', include(router.urls)),
                   url('admin/', admin.site.urls),
 
