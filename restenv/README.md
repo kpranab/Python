@@ -1,5 +1,12 @@
+#Django project setup
+django-admin startproject projectName
+django-admin startapp appName
+python manage.py runserver
+
+python -m django --version
+
 # Python
-Install virtualenv 
+#Install virtualenv
 
 verify easy_install --version
 Check the script path is set or not in path -> C:\Users\Muna\AppData\Local\Programs\Python\Python36\Scripts\
