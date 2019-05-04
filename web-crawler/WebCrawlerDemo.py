@@ -3,4 +3,4 @@ from bs4 import BeautifulSoup
 
 html = urlopen("https://www.wikipedia.org/")
 bsobject = BeautifulSoup(html.read(), "html.parser")
-print(bsobject.h1)
+print(bsobject.title)
