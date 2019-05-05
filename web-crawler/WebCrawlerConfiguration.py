@@ -19,3 +19,12 @@ def create_data_files(project_name, base_url):
 def write_file(path, data):
     with open(path, 'w') as f:
         f.write(data)
+
+
+def append_to_file(path, data):
+    with open(path, 'a') as f:
+        f.write(data, '\n')
+
+
+def delete_file_contents(path):
+    open(path, 'w').close()
