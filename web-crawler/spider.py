@@ -37,3 +37,18 @@ class Spider:
             Spider.queue.remove(page_url)
             Spider.crawled.add(page_url)
             Spider.update_files()
+
+    @staticmethod
+    def gather_links(page_url):
+        html_string = ''
+        try:
+            response = urlopen(page_url)
+            if 'text.html' in response.getheader('Content-Type'):
+                html_bytes = response.read()
+                html_string = html_bytes.decode("utf-8")
+            finder = LinkFinder(Spider.base_url, page_url)
+            finder.feed(html_string)
+        except Exception as e:
+            print(str(e))
+            return set()
+        return finder.page_links()
