@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 from link_finder import LinkFinder
 from WebCrawlerConfiguration import *
+from domain import *
 
 
 class Spider:
