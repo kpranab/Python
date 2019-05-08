@@ -5,7 +5,7 @@ from domain import *
 from crawlerConfiguration import *
 
 PROJECT_NAME = 'thesite'
-HOME_PAGE = 'https://xn--kttim-kva.dev/'
+HOME_PAGE = 'http://pranabkumarsahoo.com/'
 DOMAIN_NAME = get_domain_name(HOME_PAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
 CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
@@ -26,3 +26,21 @@ def create_jobs():
         queue.put(link)
         queue.join()
         crawl()
+
+
+def create_workers():
+    for _ in range(NUMBER_OF_THREADS):
+        t = threading.Thread(target=work)
+        t.demon = True
+        t.start()
+
+
+def work():
+    while True:
+        url = queue.get()
+        Spider.crawl_page(threading.current_thread().name, url)
+        queue.task_done()
+
+
+create_workers()
+crawl()

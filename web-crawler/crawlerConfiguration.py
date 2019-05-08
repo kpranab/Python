@@ -35,7 +35,7 @@ def file_to_set(file_name):
     with open(file_name, 'rt') as f:
         for line in f:
             results.add(line.replace('\n', ''))
-            return results
+    return results
 
 
 def set_to_file(links, file_name):

@@ -18,9 +18,9 @@ class Spider:
         Spider.base_url = base_url
         Spider.domain_name = domain_name
         Spider.queue_file = Spider.project_name + '/queue.txt'
-        Spider.crawled_file = Spider.project_name + 'crawled.txt'
+        Spider.crawled_file = Spider.project_name + '/crawled.txt'
         self.boot()
-        self.crawl_page('First Spider', Spider.base_url)
+        self.crawl_page('First spider',Spider.base_url)
 
     @staticmethod
     def boot():
