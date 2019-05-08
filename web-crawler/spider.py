@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 from link_finder import LinkFinder
-from WebCrawlerConfiguration import *
+from crawlerConfiguration import *
 from domain import *
 
 
