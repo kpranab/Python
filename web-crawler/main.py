@@ -12,3 +12,17 @@ CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
 NUMBER_OF_THREADS = 8
 queue = Queue()
 Spider(PROJECT_NAME, HOME_PAGE, DOMAIN_NAME)
+
+
+def crawl():
+    queued_links = file_to_set(QUEUE_FILE)
+    if len(queued_links) > 0:
+        print(str(len(queued_links)) + ' Links in the queue ')
+        create_jobs()
+
+
+def create_jobs():
+    for link in file_to_set(QUEUE_FILE):
+        queue.put(link)
+        queue.join()
+        crawl()
