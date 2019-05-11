@@ -6,5 +6,10 @@ from time import sleep
 
 driver = webdriver.Chrome()
 driver.get("https://www.google.com/")
-time.sleep(15)
-driver.refresh()
+elem = driver.find_element_by_link_text('About')
+time.sleep(5)
+elem.click()
+time.sleep(5)
+driver.back()
+time.sleep(5)
+driver.forward()
