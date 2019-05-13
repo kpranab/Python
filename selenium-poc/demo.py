@@ -5,11 +5,8 @@ import time
 from time import sleep
 
 driver = webdriver.Chrome()
-driver.get("https://www.google.com/")
-elem = driver.find_element_by_link_text('About')
+driver.get("https://www.wikipedia.org")
+elem = driver.find_element_by_tag_name('html')
+elem.send_keys(Keys.END)
 time.sleep(5)
-elem.click()
-time.sleep(5)
-driver.back()
-time.sleep(5)
-driver.forward()
+elem.send_keys(Keys.HOME)
